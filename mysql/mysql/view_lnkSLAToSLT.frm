@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select distinct `_lnkslatoslt`.`id` AS `id`,`_lnkslatoslt`.`sla_id` AS `sla_id`,`SLA_sla_id_sla`.`name` AS `sla_name`,`_lnkslatoslt`.`slt_id` AS `slt_id`,`SLT_slt_id_slt`.`name` AS `slt_name`,`SLT_slt_id_slt`.`metric` AS `slt_metric`,`SLT_slt_id_slt`.`request_type` AS `slt_request_type`,`SLT_slt_id_slt`.`priority` AS `slt_ticket_priority`,`SLT_slt_id_slt`.`value` AS `slt_value`,`SLT_slt_id_slt`.`unit` AS `slt_value_unit`,cast(concat(coalesce(`_lnkslatoslt`.`sla_id`,\'\'),coalesce(\' \',\'\'),coalesce(`_lnkslatoslt`.`slt_id`,\'\')) as char charset utf8mb4) AS `friendlyname`,cast(concat(coalesce(`SLA_sla_id_sla`.`name`,\'\')) as char charset utf8mb4) AS `sla_id_friendlyname`,cast(concat(coalesce(`SLT_slt_id_slt`.`name`,\'\')) as char charset utf8mb4) AS `slt_id_friendlyname` from ((`mysql`.`lnkslatoslt` `_lnkslatoslt` join `mysql`.`sla` `SLA_sla_id_sla` on((`_lnkslatoslt`.`sla_id` = `SLA_sla_id_sla`.`id`))) join `mysql`.`slt` `SLT_slt_id_slt` on((`_lnkslatoslt`.`slt_id` = `SLT_slt_id_slt`.`id`))) where 1
+md5=e35db4eaafab836ca578f81c988d564a
+updatable=0
+algorithm=0
+definer_user=admin
+definer_host=%
+suid=2
+with_check_option=0
+timestamp=2019-02-01 19:02:22
+create-version=2
+source=SELECT DISTINCT `_lnkslatoslt`.`id` AS `id`, `_lnkslatoslt`.`sla_id` AS `sla_id`, `SLA_sla_id_sla`.`name` AS `sla_name`, `_lnkslatoslt`.`slt_id` AS `slt_id`, `SLT_slt_id_slt`.`name` AS `slt_name`, `SLT_slt_id_slt`.`metric` AS `slt_metric`, `SLT_slt_id_slt`.`request_type` AS `slt_request_type`, `SLT_slt_id_slt`.`priority` AS `slt_ticket_priority`, `SLT_slt_id_slt`.`value` AS `slt_value`, `SLT_slt_id_slt`.`unit` AS `slt_value_unit`, CAST(CONCAT(COALESCE(`_lnkslatoslt`.`sla_id`, \'\'), COALESCE(\' \', \'\'), COALESCE(`_lnkslatoslt`.`slt_id`, \'\')) AS CHAR) AS `friendlyname`, CAST(CONCAT(COALESCE(`SLA_sla_id_sla`.`name`, \'\')) AS CHAR) AS `sla_id_friendlyname`, CAST(CONCAT(COALESCE(`SLT_slt_id_slt`.`name`, \'\')) AS CHAR) AS `slt_id_friendlyname` FROM `lnkslatoslt` AS `_lnkslatoslt`INNER JOIN `sla` AS `SLA_sla_id_sla` ON `_lnkslatoslt`.`sla_id` = `SLA_sla_id_sla`.`id`INNER JOIN `slt` AS `SLT_slt_id_slt` ON `_lnkslatoslt`.`slt_id` = `SLT_slt_id_slt`.`id` WHERE 1
+client_cs_name=utf8mb4
+connection_cl_name=utf8mb4_unicode_ci
+view_body_utf8=select distinct `_lnkslatoslt`.`id` AS `id`,`_lnkslatoslt`.`sla_id` AS `sla_id`,`SLA_sla_id_sla`.`name` AS `sla_name`,`_lnkslatoslt`.`slt_id` AS `slt_id`,`SLT_slt_id_slt`.`name` AS `slt_name`,`SLT_slt_id_slt`.`metric` AS `slt_metric`,`SLT_slt_id_slt`.`request_type` AS `slt_request_type`,`SLT_slt_id_slt`.`priority` AS `slt_ticket_priority`,`SLT_slt_id_slt`.`value` AS `slt_value`,`SLT_slt_id_slt`.`unit` AS `slt_value_unit`,cast(concat(coalesce(`_lnkslatoslt`.`sla_id`,\'\'),coalesce(\' \',\'\'),coalesce(`_lnkslatoslt`.`slt_id`,\'\')) as char charset utf8mb4) AS `friendlyname`,cast(concat(coalesce(`SLA_sla_id_sla`.`name`,\'\')) as char charset utf8mb4) AS `sla_id_friendlyname`,cast(concat(coalesce(`SLT_slt_id_slt`.`name`,\'\')) as char charset utf8mb4) AS `slt_id_friendlyname` from ((`mysql`.`lnkslatoslt` `_lnkslatoslt` join `mysql`.`sla` `SLA_sla_id_sla` on((`_lnkslatoslt`.`sla_id` = `SLA_sla_id_sla`.`id`))) join `mysql`.`slt` `SLT_slt_id_slt` on((`_lnkslatoslt`.`slt_id` = `SLT_slt_id_slt`.`id`))) where 1
+mariadb-version=100036

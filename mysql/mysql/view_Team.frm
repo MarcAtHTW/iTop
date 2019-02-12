@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select distinct `_contact`.`id` AS `id`,`_contact`.`name` AS `name`,`_contact`.`status` AS `status`,`_contact`.`org_id` AS `org_id`,`Organization_org_id_organization`.`name` AS `org_name`,`_contact`.`email` AS `email`,`_contact`.`phone` AS `phone`,`_contact`.`notify` AS `notify`,`_contact`.`function` AS `function`,`_contact`.`finalclass` AS `finalclass`,cast(concat(coalesce(`_contact`.`name`,\'\')) as char charset utf8mb4) AS `friendlyname`,coalesce((`_contact`.`status` = \'inactive\'),0) AS `obsolescence_flag`,`_contact`.`obsolescence_date` AS `obsolescence_date`,cast(concat(coalesce(`Organization_org_id_organization`.`name`,\'\')) as char charset utf8mb4) AS `org_id_friendlyname`,coalesce((`Organization_org_id_organization`.`status` = \'inactive\'),0) AS `org_id_obsolescence_flag` from (`mysql`.`contact` `_contact` join `mysql`.`organization` `Organization_org_id_organization` on((`_contact`.`org_id` = `Organization_org_id_organization`.`id`))) where coalesce((`_contact`.`finalclass` = \'Team\'),1)
+md5=668d13b89cc5f881368b410534d42f18
+updatable=0
+algorithm=0
+definer_user=admin
+definer_host=%
+suid=2
+with_check_option=0
+timestamp=2019-02-01 19:02:22
+create-version=2
+source=SELECT DISTINCT `_contact`.`id` AS `id`, `_contact`.`name` AS `name`, `_contact`.`status` AS `status`, `_contact`.`org_id` AS `org_id`, `Organization_org_id_organization`.`name` AS `org_name`, `_contact`.`email` AS `email`, `_contact`.`phone` AS `phone`, `_contact`.`notify` AS `notify`, `_contact`.`function` AS `function`, `_contact`.`finalclass` AS `finalclass`, CAST(CONCAT(COALESCE(`_contact`.`name`, \'\')) AS CHAR) AS `friendlyname`, COALESCE((`_contact`.`status` = \'inactive\'), 0) AS `obsolescence_flag`, `_contact`.`obsolescence_date` AS `obsolescence_date`, CAST(CONCAT(COALESCE(`Organization_org_id_organization`.`name`, \'\')) AS CHAR) AS `org_id_friendlyname`, COALESCE((`Organization_org_id_organization`.`status` = \'inactive\'), 0) AS `org_id_obsolescence_flag` FROM `contact` AS `_contact`INNER JOIN `organization` AS `Organization_org_id_organization` ON `_contact`.`org_id` = `Organization_org_id_organization`.`id` WHERE COALESCE((`_contact`.`finalclass` IN (\'Team\')), 1)
+client_cs_name=utf8mb4
+connection_cl_name=utf8mb4_unicode_ci
+view_body_utf8=select distinct `_contact`.`id` AS `id`,`_contact`.`name` AS `name`,`_contact`.`status` AS `status`,`_contact`.`org_id` AS `org_id`,`Organization_org_id_organization`.`name` AS `org_name`,`_contact`.`email` AS `email`,`_contact`.`phone` AS `phone`,`_contact`.`notify` AS `notify`,`_contact`.`function` AS `function`,`_contact`.`finalclass` AS `finalclass`,cast(concat(coalesce(`_contact`.`name`,\'\')) as char charset utf8mb4) AS `friendlyname`,coalesce((`_contact`.`status` = \'inactive\'),0) AS `obsolescence_flag`,`_contact`.`obsolescence_date` AS `obsolescence_date`,cast(concat(coalesce(`Organization_org_id_organization`.`name`,\'\')) as char charset utf8mb4) AS `org_id_friendlyname`,coalesce((`Organization_org_id_organization`.`status` = \'inactive\'),0) AS `org_id_obsolescence_flag` from (`mysql`.`contact` `_contact` join `mysql`.`organization` `Organization_org_id_organization` on((`_contact`.`org_id` = `Organization_org_id_organization`.`id`))) where coalesce((`_contact`.`finalclass` = \'Team\'),1)
+mariadb-version=100036

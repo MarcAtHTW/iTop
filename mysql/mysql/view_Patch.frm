@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select distinct `_patch`.`id` AS `id`,`_patch`.`name` AS `name`,`_patch`.`description` AS `description`,`_patch`.`finalclass` AS `finalclass`,cast(concat(coalesce(`_patch`.`name`,\'\')) as char charset utf8mb4) AS `friendlyname` from `mysql`.`patch` `_patch` where 1
+md5=b6da9162fa1750efcb0fd8e9267a2428
+updatable=0
+algorithm=0
+definer_user=admin
+definer_host=%
+suid=2
+with_check_option=0
+timestamp=2019-02-01 19:02:22
+create-version=2
+source=SELECT DISTINCT `_patch`.`id` AS `id`, `_patch`.`name` AS `name`, `_patch`.`description` AS `description`, `_patch`.`finalclass` AS `finalclass`, CAST(CONCAT(COALESCE(`_patch`.`name`, \'\')) AS CHAR) AS `friendlyname` FROM `patch` AS `_patch` WHERE 1
+client_cs_name=utf8mb4
+connection_cl_name=utf8mb4_unicode_ci
+view_body_utf8=select distinct `_patch`.`id` AS `id`,`_patch`.`name` AS `name`,`_patch`.`description` AS `description`,`_patch`.`finalclass` AS `finalclass`,cast(concat(coalesce(`_patch`.`name`,\'\')) as char charset utf8mb4) AS `friendlyname` from `mysql`.`patch` `_patch` where 1
+mariadb-version=100036

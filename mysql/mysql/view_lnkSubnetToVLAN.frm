@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select distinct `_lnksubnettovlan`.`id` AS `id`,`_lnksubnettovlan`.`subnet_id` AS `subnet_id`,`Subnet_subnet_id_subnet`.`ip` AS `subnet_ip`,`Subnet_subnet_id_subnet`.`subnet_name` AS `subnet_name`,`_lnksubnettovlan`.`vlan_id` AS `vlan_id`,`VLAN_vlan_id_vlan`.`vlan_tag` AS `vlan_tag`,cast(concat(coalesce(`_lnksubnettovlan`.`subnet_id`,\'\'),coalesce(\' \',\'\'),coalesce(`_lnksubnettovlan`.`vlan_id`,\'\')) as char charset utf8mb4) AS `friendlyname`,cast(concat(coalesce(`Subnet_subnet_id_subnet`.`ip`,\'\'),coalesce(\' \',\'\'),coalesce(`Subnet_subnet_id_subnet`.`ip_mask`,\'\')) as char charset utf8mb4) AS `subnet_id_friendlyname`,cast(concat(coalesce(`VLAN_vlan_id_vlan`.`vlan_tag`,\'\')) as char charset utf8mb4) AS `vlan_id_friendlyname` from ((`mysql`.`lnksubnettovlan` `_lnksubnettovlan` join `mysql`.`subnet` `Subnet_subnet_id_subnet` on((`_lnksubnettovlan`.`subnet_id` = `Subnet_subnet_id_subnet`.`id`))) join `mysql`.`vlan` `VLAN_vlan_id_vlan` on((`_lnksubnettovlan`.`vlan_id` = `VLAN_vlan_id_vlan`.`id`))) where 1
+md5=b739b638bcbffc9989446eead8e7bbc3
+updatable=0
+algorithm=0
+definer_user=admin
+definer_host=%
+suid=2
+with_check_option=0
+timestamp=2019-02-01 19:02:22
+create-version=2
+source=SELECT DISTINCT `_lnksubnettovlan`.`id` AS `id`, `_lnksubnettovlan`.`subnet_id` AS `subnet_id`, `Subnet_subnet_id_subnet`.`ip` AS `subnet_ip`, `Subnet_subnet_id_subnet`.`subnet_name` AS `subnet_name`, `_lnksubnettovlan`.`vlan_id` AS `vlan_id`, `VLAN_vlan_id_vlan`.`vlan_tag` AS `vlan_tag`, CAST(CONCAT(COALESCE(`_lnksubnettovlan`.`subnet_id`, \'\'), COALESCE(\' \', \'\'), COALESCE(`_lnksubnettovlan`.`vlan_id`, \'\')) AS CHAR) AS `friendlyname`, CAST(CONCAT(COALESCE(`Subnet_subnet_id_subnet`.`ip`, \'\'), COALESCE(\' \', \'\'), COALESCE(`Subnet_subnet_id_subnet`.`ip_mask`, \'\')) AS CHAR) AS `subnet_id_friendlyname`, CAST(CONCAT(COALESCE(`VLAN_vlan_id_vlan`.`vlan_tag`, \'\')) AS CHAR) AS `vlan_id_friendlyname` FROM `lnksubnettovlan` AS `_lnksubnettovlan`INNER JOIN `subnet` AS `Subnet_subnet_id_subnet` ON `_lnksubnettovlan`.`subnet_id` = `Subnet_subnet_id_subnet`.`id`INNER JOIN `vlan` AS `VLAN_vlan_id_vlan` ON `_lnksubnettovlan`.`vlan_id` = `VLAN_vlan_id_vlan`.`id` WHERE 1
+client_cs_name=utf8mb4
+connection_cl_name=utf8mb4_unicode_ci
+view_body_utf8=select distinct `_lnksubnettovlan`.`id` AS `id`,`_lnksubnettovlan`.`subnet_id` AS `subnet_id`,`Subnet_subnet_id_subnet`.`ip` AS `subnet_ip`,`Subnet_subnet_id_subnet`.`subnet_name` AS `subnet_name`,`_lnksubnettovlan`.`vlan_id` AS `vlan_id`,`VLAN_vlan_id_vlan`.`vlan_tag` AS `vlan_tag`,cast(concat(coalesce(`_lnksubnettovlan`.`subnet_id`,\'\'),coalesce(\' \',\'\'),coalesce(`_lnksubnettovlan`.`vlan_id`,\'\')) as char charset utf8mb4) AS `friendlyname`,cast(concat(coalesce(`Subnet_subnet_id_subnet`.`ip`,\'\'),coalesce(\' \',\'\'),coalesce(`Subnet_subnet_id_subnet`.`ip_mask`,\'\')) as char charset utf8mb4) AS `subnet_id_friendlyname`,cast(concat(coalesce(`VLAN_vlan_id_vlan`.`vlan_tag`,\'\')) as char charset utf8mb4) AS `vlan_id_friendlyname` from ((`mysql`.`lnksubnettovlan` `_lnksubnettovlan` join `mysql`.`subnet` `Subnet_subnet_id_subnet` on((`_lnksubnettovlan`.`subnet_id` = `Subnet_subnet_id_subnet`.`id`))) join `mysql`.`vlan` `VLAN_vlan_id_vlan` on((`_lnksubnettovlan`.`vlan_id` = `VLAN_vlan_id_vlan`.`id`))) where 1
+mariadb-version=100036
